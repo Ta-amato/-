@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-fx038NkLY4U1TCrBDiu5FWPEa9eiZu01EiLryshJbCo=" crossorigin="anonymous">
+  <title>今日の機嫌予報🌤️</title>
+</head>
+
+<body class="bg-light"> 
+  <header>  <!-- ページの上部 -->
+    <nav class="navbar bg-info" data-bs-theme="dark">  <!--ナビバーの構造をつくる、水色背景+白文字 -->
+      <div class="container-fluid"><!-- container-fluid: 画面の端から端まで100%広がる(余白なし) container: 画面サイズに応じて適度な幅に制限され、中央に配置される(左右に余白ができる) -->
+        <a class="navbar-brand" href="#">今日の機嫌占い</a>  <!--大きい、太字、適度な余白 -->
+      </div>
+    </nav>
+  </header>
+
+  <div class="container pt-5">  <!-- 中央に制限、padding-top(上の余白)を大きめに取る -->
+    <h1 class="mb-3">あなたの今日の機嫌は？</h1>  <!-- margin-bottom(下の余白)を中くらいに設定 -->
+    <p>診断したい名前を入力してください</p>
+
+    <form id="mood-form">
+      <div class="row">  <!-- row(行)の中に col(列)を入れる（rowがないと、colが正しく動作しない） -->
+        <div class="col-sm-8 col-lg-6">  <!-- sm:576px以上:スマホ(横)・小タブレット8/12、lg:992px以上:PC・大きいタブレット6/12 -->
+          <div class="input-group mb-3">  <!-- input-group: 中の要素(inputとbutton)を横に並べてくっつける  mb-3: 下に余白を追加 -->
+            <input type="text" class="form-control" id="user-name" size="40" maxlength="20" placeholder="例：たろう">  <!--class="form-control": Bootstrapのスタイル(角丸、枠線など)を適用-->
+            <button type="submit" class="btn btn-info text-white">占う</button>  <!--class="btn btn-info": 青系のボタンスタイル-->
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div id="result-area"></div>
+    <div id="line-share-area" class="mt-3"></div>  <!--mt-3: margin-top(上の余白)を追加-->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
